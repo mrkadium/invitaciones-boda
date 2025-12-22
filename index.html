@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raquel y Mario | Nuestra boda</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        height: 100dvh;
+
+        text-align: center;
+    }
+
+    main img{
+        width: 100px;
+    }
+</style>
+<body>
+    <header>
+        <h1>Hola, <span id="name"></span></h1>
+        <h2>¡Muchas gracias por ser parte de esto!</h2>
+    </header>
+    <main>
+        <div class="image">
+            <img src="imagen1.jpg" alt="">
+            <p>11</p>
+        </div>
+        <div class="image">
+            <img src="imagen2.jpg" alt="">
+            <p>ABR</p>
+        </div>
+        <div class="image">
+            <img src="imagen3.jpg" alt="">
+            <p>26</p>
+        </div>
+    </main>
+    <footer>
+        <p>¡<span id="article"></span> esperamos!</p>
+    </footer>
+    <script>
+        const queryString = window.location.search;
+
+        const urlParams = new URLSearchParams(queryString);
+
+        const invite = atob(urlParams.get('invite'));
+
+        const guest = invite.split(",")[0]
+
+        const article = invite.split(",")[1]
+
+        const name = document.getElementById("name")
+        const article_value = document.getElementById("article")
+
+        name.innerText = guest
+        article_value.innerText = article
+    </script>
+</body>
+</html>
