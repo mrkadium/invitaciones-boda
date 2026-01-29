@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+        textarea{
+            width: 500px;
+            min-height: 800px;
+            font-size: 24px;
+        }
+        p{
+            font-size: 24px;
+        }
+    </style>
+    <body>
+        <textarea id="myinput" type="text"></textarea>
+        <textarea id="myoutput"></textarea>
+        <button id="myencode">Encode</button>
+    <script>
+
+        myencode.addEventListener("click", () => {
+            myoutput.value = ""
+            const lines = myinput.value.split("\n")
+
+            for(line of lines){
+                line = btoa(unescape(encodeURIComponent(line)))
+                
+                myoutput.value = `${myoutput.value}
+                ${line}`
+            }
+        })
+
+
+
+
+
+          // let myText = "familia Rodríguez Peña;Los;3"
+
+        // console.log(`Text before encoding: ${myText}`);
+
+        // let myEncodedText = btoa(unescape(encodeURIComponent(myText)));
+
+        // console.log(`Text after encoding: ${myEncodedText}`);
+        
+        // let myDecodedText = decodeURIComponent(escape(atob(myEncodedText)));
+
+        // console.log(`Text after decoding: ${myDecodedText}`);
+    </script>
+    
+    </body>
+</html>
