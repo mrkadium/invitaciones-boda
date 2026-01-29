@@ -184,7 +184,7 @@
             <div><button id="modalmenos">-</button> <span id="cupos2"></span> <button id="modalmas">+</button></div>
         </div>
 
-        <form id="inputform" name="contact" method="POST" data-netlify="true">
+        <form id="inputform" name="contact" method="POST" netlify data-netlify="true">
             <input type="hidden" name="subject"
             value="Confirmación de asistencia %{formName}" />
             
@@ -195,7 +195,6 @@
             </form>
     </footer>
     <script>
-        verifyConfirmation()
         
         const name_element = document.getElementById("name")
         const prefijo_element = document.getElementById("prefijo")
@@ -206,6 +205,10 @@
         const invitado = data.split(';')[0]
         const prefijo = data.split(';')[1]
         const cantidad = data.split(';')[2]
+        
+        
+        verifyConfirmation(data)
+
         
         cupos.textContent = cantidad
         cupos2.textContent = cantidad
@@ -247,11 +250,13 @@
 
         function saveInBrowser(){
             window.localStorage.setItem("hasConfirmed", "true")
+            window.localStorage.setItem("data", data)
         }
 
-        function verifyConfirmation(){
+        function verifyConfirmation(data){
             const hasConfirmed = window.localStorage.getItem("hasConfirmed")
-            if(hasConfirmed == "true"){
+            const dataValue = window.localStorage.getItem("data")
+            if(hasConfirmed == "true" && dataValue == data){
                 mymodal.classList.add("hidden")
                 inputform.classList.add("hidden")
             }
