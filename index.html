@@ -84,21 +84,31 @@
     }
     header .image{
         position: relative;
-        z-index: 1;
+        z-index: 2;
     }
     header .image2{
         position: relative;
-        z-index: -1;
+        z-index: 1;
         transform: rotate(-2deg) translateX(-75px) scale(0.8);
     }
     header .image3{
         position: relative;
-        z-index: -1;
+        z-index: 1;
         transform: rotate(2deg) translateX(75px) scale(0.8);
     }
-
+    
     header .image:hover{
         transform: scale(1.05);
+    }
+    header .image2:hover{
+        transform: scale(1.05);
+        transform: rotate(-2deg) translateX(-75px) scale(0.85);
+        z-index: 3;
+    }
+    header .image3:hover{
+        transform: scale(1.05);
+        transform: rotate(2deg) translateX(75px) scale(0.85);
+        z-index: 3;
     }
     header .image p,
     header .image3 p,
@@ -187,6 +197,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 16px;
     }
     section .detalle{
         /* display: flex;
@@ -196,7 +207,8 @@
 
         display: grid;
         grid-template-columns: auto auto 1fr;
-        gap: 10px;
+        row-gap: 90px;
+        column-gap: 12px;
 
         margin-bottom: 12px;
 
@@ -310,13 +322,19 @@
         }
         header .image2{
             position: relative;
-            z-index: -1;
             transform: rotate(-2deg) translateX(-300px) scale(0.9);
+        }
+        header .image2:hover{
+            transform: rotate(-2deg) translateX(-300px) scale(0.95);
+            z-index: 3;
         }
         header .image3{
             position: relative;
-            z-index: -1;
             transform: rotate(2deg) translateX(300px) scale(0.9);
+        }
+        header .image3:hover{
+            transform: rotate(2deg) translateX(300px) scale(0.95);
+            z-index: 3;
         }
         main{
             grid-template-rows: unset;
