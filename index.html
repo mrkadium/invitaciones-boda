@@ -16,13 +16,21 @@
         scroll-behavior: smooth;
     }
 
+    :root{
+        --main-font-family: "Playwrite AU QLD", cursive;
+
+        --main-green: rgb(38, 122, 83);
+        --main-golden-on-green: rgb(229, 189, 90);
+        --main-golden-on-white: goldenrod;
+    }
+
     body{
         min-height: 100dvh;
         max-width: 1000px;
         margin: 0 auto;
         display: grid;
         user-select: none;
-        font-family: "Playwrite AU QLD", cursive;
+        font-family: var(--main-font-family);
         font-optical-sizing: auto;
         font-weight: 200;
         font-style: normal;
@@ -53,7 +61,7 @@
         line-height: 40px;
         font-size: 36px;
         font-weight: 800;
-        color: goldenrod;
+        color: var(--main-golden-on-green);
     }
     
     header h2{
@@ -62,7 +70,7 @@
         font-size: 24px;
         font-weight: 200;
         line-height: 40px;
-        color: rgb(38, 122, 83);
+        color: var(--main-green);
     }
 
     header .image,
@@ -215,14 +223,14 @@
         color: rgb(38, 122, 83);
     }
     section .detalle b{
-        color: goldenrod;
+        color: var(--main-golden-on-white);
     }
     section .detalle svg{
         display: inline-block;
         width: 24px;
         height: 34px;
 
-        fill: goldenrod;
+        fill: var(--main-golden-on-green);
     }
 
 
@@ -244,12 +252,56 @@
     footer p{
         margin-bottom: 24px;
         font-size: 24px;
+        font-size: 32px;
+        font-weight: 400;
+        color: var(--main-golden-on-green);
     }
 
     footer form,
     footer input,
     footer textarea{
         width: 100%;
+    }
+    footer .buttons{
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+        font-weight: 400;
+    }
+    footer .buttons button{
+        /* display: inline; */
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        border-radius: 50%;
+        border: 0;
+        
+        background-color: var(--main-golden-on-white);
+        font-size: 24px;
+        font-weight: bold;
+        
+        cursor: pointer;
+    }
+    footer .buttons span{
+        font-weight: bold;
+    }
+
+    footer form button{
+        font-family: var(--main-font-family);
+        display: inline-block;
+        padding: 8px 16px;
+
+        border: 0;
+        background-color: white;
+        border-radius: 24px;
+
+        font-size: 16px;
+        color:rgb(38, 122, 83);
     }
 
     @keyframes bubblejump {
@@ -367,6 +419,13 @@
             font-size: 24px;
         }
         footer p{
+            font-size: 32px;
+        }
+        footer .buttons button{
+            width: 36px;
+            height: 36px;
+        }
+        footer form button{
             font-size: 24px;
         }
 
@@ -450,8 +509,8 @@
     <footer id="footer">
         <p>¡<span id="prefijo"></span> esperamos!</p>
         <div id="mymodal" class="modal">
-            Contar con la presencia de nuestros allegados en este evento tan especial nos encantaría. <br>Por favor, solicitamos confirmar la asistencia indicando el número de personas invitadas que podrán asistir. <br><br>Agradecemos que la confirmación sea antes de 31 de marzo.
-            <div><button id="modalmenos">-</button> <span id="cupos2"></span> <button id="modalmas">+</button></div>
+            Contar con la presencia de nuestros allegados en este evento tan especial nos encantaría. <br>Por favor, solicitamos confirmar la asistencia <b>indicando el número de personas invitadas</b> que podrán asistir. <br><br>Agradecemos que la confirmación sea <b>antes de 31 de marzo</b>.
+            <div class="buttons">Asistirán <button id="modalmenos">-</button> <span id="cupos2"></span> <button id="modalmas">+</button> personas</div>
         </div>
 
         <form id="inputform" name="contact" method="POST" netlify data-netlify="true">
@@ -460,7 +519,7 @@
             
             <input type="text" id="inputname" name="name" hidden />
             <textarea id="inputmessage" name="message" hidden></textarea>
-            <button id="inputsubmit" type="submit">Confirmo mi asistencia</button>
+            <button id="inputsubmit" type="submit">Confirmar asistencia</button>
 
             </form>
             
