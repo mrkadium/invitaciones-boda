@@ -535,6 +535,7 @@
         </p>
     </section>
     <footer id="footer">
+        <h2 class="hidden" id="thanks">Muchas gracias por confirmar</h2>
         <p>¡<span id="prefijo"></span> esperamos!</p>
         <div id="mymodal" class="modal">
             Contar con la presencia de nuestros allegados en este evento tan especial nos encantaría. <span id="justone"><br>Por favor, solicitamos confirmar la asistencia <b>indicando el número de personas invitadas</b> que podrán asistir.</span> <br><br>Agradecemos que la confirmación sea <b>antes de 31 de marzo</b>.
@@ -633,6 +634,7 @@
             if(hasConfirmed == "true" && dataValue == data){
                 mymodal.classList.add("hidden")
                 inputform.classList.add("hidden")
+                thanks.classList.remove("hidden")
             }
         }
 
