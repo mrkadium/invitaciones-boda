@@ -541,7 +541,7 @@
             <div class="buttons" id="buttons">Asistirán <button id="modalmenos">-</button> <span id="cupos2"></span> <button id="modalmas">+</button> personas</div>
         </div>
 
-        <form id="inputform" name="contact" method="POST" netlify data-netlify="true">
+        <form id="inputform" name="contact" action="success.html" method="POST" netlify data-netlify="true">
             <input type="hidden" name="subject"
             value="Confirmación de asistencia %{formName}" />
             
@@ -565,7 +565,7 @@
         </audio>
     </div>
     <script>
-        musica.play()
+        // musica.play()
         
         const name_element = document.getElementById("name")
         const prefijo_element = document.getElementById("prefijo")
@@ -577,6 +577,7 @@
         const prefijo = data.split(';')[1]
         const cantidad = data.split(';')[2]
         
+        inputform.setAttribute("action", `success.html?invite=${urlParams.get('invite')}`)
         
         verifyConfirmation(data)
         verifyCantidad(cantidad)

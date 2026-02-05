@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación enviada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD:wght@100..400&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --main-font-family: "Playwrite AU QLD", cursive;
+
+            --main-green: rgb(38, 122, 83);
+            --main-golden-on-green: rgb(229, 189, 90);
+            --main-golden-on-white: goldenrod;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        body{
+            min-height: 100dvh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            background-color: var(--main-green);
+            
+            font-family: var(--main-font-family);
+        }
+        main{
+            position: relative;
+
+            max-width: 600px;
+
+            margin: 0 20px;
+            padding: 48px 24px;
+
+            border-radius: 48px;
+            
+            background-color: white;
+        }
+        main h1{
+            margin-bottom: 24px;
+
+            font-size: 36px;
+            line-height: 48px;
+
+            color: var(--main-golden-on-white)
+        }
+        main p{
+            margin-bottom: 12px;
+
+            font-size: 24px;
+            line-height: 36px;
+        }
+        main a{
+            display: inline-block;
+            
+            padding: 12px 24px;
+            border-radius: 24px;
+
+            background-color: var(--main-green);
+
+            color: white;
+            text-decoration: none;
+        }
+        .polaroid{
+            position: absolute;
+            top: 12px;
+            right: 8px;
+
+            width: 100px;
+            height: 100px;
+            
+            background-color: white;
+            box-shadow: 0 3px 10px rgb(162, 162, 162);
+
+            transform: rotate(10deg);
+        }
+        .polaroid img{
+            width: 100%;
+            height: 70%;
+
+            padding: 4px 4px 0 4px;
+
+            object-fit: cover;
+            object-position: center;
+        }
+        .polaroid p{
+            font-size: 8px;
+            color: grey;
+            text-align: center;
+            line-height: unset;
+        }
+
+        @media only screen and (min-width: 600px){
+            main{
+                padding: 64px 48px;
+                padding-right: 160px;
+            }
+            main h1{
+                font-size: 48px;
+                line-height: 64px;
+            }
+            .polaroid{
+                width: 200px;
+                height: 200px;
+
+                padding: 6px 6px 0 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>¡Muchas gracias por confirmar la asistencia!</h1>
+        <p>Nos hará muy felices tener<span id="elemento_prefijo"></span> en nuestra boda</p>
+        <a id="elemento_boton" href="index.html">Volver a la página</a>
+        <div class="polaroid">
+            <img src="venue.jpg" alt="">
+            <p>Carbón y Leña</p>
+        </div>
+    </main>
+
+    <script>
+        const queryString = window.location.search
+        const urlParams = new URLSearchParams(queryString)
+        const data = decodeURIComponent(escape(atob(urlParams.get('invite'))));
+        const invitado = data.split(';')[0]
+        const prefijo = data.split(';')[1]
+        const cantidad = data.split(';')[2]
+
+        elemento_prefijo.textContent = prefijo.toLowerCase()
+
+        
+        elemento_boton.setAttribute("href", `index.html?invite=${urlParams.get('invite')}`)
+    </script>
+</body>
+</html>
