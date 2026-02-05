@@ -34,6 +34,10 @@
         font-optical-sizing: auto;
         font-weight: 200;
         font-style: normal;
+
+        max-height: 100dvh;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
     }
 
     header{
@@ -90,19 +94,40 @@
         
         transition: all .2s ease;
     }
+    
     header .image{
         position: relative;
         z-index: 2;
+    }
+    @keyframes image2move {
+        0%   {transform: rotate(-2deg) translateX(-75px) scale(0.8); z-index: 1;}
+        50%   {transform: rotate(-2deg) translateX(-75px) scale(0.9); z-index: 3;}
+        100%   {transform: rotate(-2deg) translateX(-75px) scale(0.8); z-index: 1;}
+    }
+    header .hero{
     }
     header .image2{
         position: relative;
         z-index: 1;
         transform: rotate(-2deg) translateX(-75px) scale(0.8);
+        
+        animation: image2move;
+        animation-duration: 3s;
+        animation-delay: .5s;
+    }
+    @keyframes image3move {
+        0%   {transform: rotate(2deg) translateX(75px) scale(0.8); z-index: 1;}
+        50%   {transform: rotate(2deg) translateX(75px) scale(0.9); z-index: 3;}
+        100%   {transform: rotate(2deg) translateX(75px) scale(0.8); z-index: 1;}
     }
     header .image3{
         position: relative;
         z-index: 1;
         transform: rotate(2deg) translateX(75px) scale(0.8);
+        
+        animation: image3move;
+        animation-duration: 3s;
+        animation-delay: 2.5s;
     }
     
     header .image:hover{
@@ -159,6 +184,12 @@
         justify-content: center;
         align-items: center;
     }
+
+    @keyframes grayimages {
+        0% {filter: blur(6px) grayscale(1);}
+        50% {filter: blur(0px) grayscale(0);}
+        100% {filter: blur(6px) grayscale(1);}
+    }
     
     main .image img{
         height: 100%;
@@ -175,6 +206,24 @@
     }
     main .image:hover img{
         filter: blur(0px) grayscale(0);
+    }
+
+    
+    main .efecto1 img,
+    main .efecto2 img,
+    main .efecto3 img{
+        animation: grayimages;
+        animation-duration: 3s;
+        animation-delay: .5s;
+    }
+    main .efecto1 img{
+        animation-delay: .5s;
+    }
+    main .efecto2 img{
+        animation-delay: 2.5s;
+    }
+    main .efecto3 img{
+        animation-delay: 4.5s;
     }
 
     main .image p{
@@ -387,6 +436,16 @@
     }
 
 
+
+    header,
+    main,
+    section,
+    footer{
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+
     .hidden{
         display: none;
     }
@@ -400,6 +459,12 @@
             height: 400px;
             width: 400px;
         }
+        
+        @keyframes image2move {
+            0%   {transform: rotate(-2deg) translateX(-300px) scale(0.9); z-index: 1;}
+            50%   {transform: rotate(-2deg) translateX(-300px) scale(1.0); z-index: 3;}
+            100%   {transform: rotate(-2deg) translateX(-300px) scale(0.9); z-index: 1;}
+        }
         header .image2{
             position: relative;
             transform: rotate(-2deg) translateX(-300px) scale(0.9);
@@ -407,6 +472,11 @@
         header .image2:hover{
             transform: rotate(-2deg) translateX(-300px) scale(0.95);
             z-index: 3;
+        }
+        @keyframes image3move {
+            0%   {transform: rotate(2deg) translateX(300px) scale(0.9); z-index: 1;}
+            50%   {transform: rotate(2deg) translateX(300px) scale(1.0); z-index: 3;}
+            100%   {transform: rotate(2deg) translateX(300px) scale(0.9); z-index: 1;}
         }
         header .image3{
             position: relative;
@@ -466,7 +536,7 @@
 </style>
 <body>
     <header id="header">
-        <div class="image">
+        <div class="image hero">
             <img src="hero.jpg" alt="">
             <p>La propuesta</p>
         </div>
@@ -487,15 +557,15 @@
         </p>
     </header>
     <main id="main">
-        <div class="image image1">
+        <div class="image image1 efecto1">
             <img class="image-top-center image-center-center" src="banner1.jpg" alt="">
             <p>11</p>
         </div>
-        <div class="image">
+        <div class="image image2 efecto2">
             <img class="image-top-center image-center-center" src="banner2.jpg" alt="">
             <p>Abril</p>
         </div>
-        <div class="image image3">
+        <div class="image image3 efecto3">
             <img class="image-top-center image-center-center" src="banner3.jpg" alt="">
             <p>26</p>
         </div>
