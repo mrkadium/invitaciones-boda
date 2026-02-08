@@ -36,8 +36,11 @@
         font-style: normal;
 
         max-height: 100dvh;
-        overflow-y: scroll;
+        overflow-y: hidden;
         scroll-snap-type: y mandatory;
+    }
+    .scrollable-body{
+        overflow-y: scroll;
     }
 
     header{
@@ -463,6 +466,75 @@
     }
 
 
+    .music-modal{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100dvh;
+        z-index: 6;
+
+        background-color: white;
+    }
+    .music-display{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        /* width: 200px; */
+        padding: 24px 12px;
+
+        border-radius: 12px;
+        box-shadow: 0 3px 10px rgb(170, 170, 170);
+    }
+    .music-display img{
+        width: 150px;
+        height: 150px;
+
+        border-radius: 12px;
+    }
+    .music-display button{
+        display: inline-block;
+
+        border-radius: 50%;
+        border: 0;
+    }
+    .music-display svg{
+        width: 50px;
+        height: 50px;
+    }
+
+
+    #music_pause_button{
+        overflow: hidden;
+
+        position: absolute;
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 20;
+
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+
+        border-radius: 50%;
+        background-color: white;
+        box-shadow: 0 3px 10px rgb(192, 192, 192);
+    }
+    #music_pause_button svg{
+        width: 100%;
+        height: 100%;
+
+        fill: var(--main-golden-on-white);
+    }
+
 
     header,
     main,
@@ -475,6 +547,10 @@
 
     .hidden{
         display: none;
+    }
+    .hidden-slow{
+        opacity: 0;
+        transition: all 2s ease;
     }
 
     @media only screen and (min-width: 1000px){
@@ -569,7 +645,24 @@
         }
     }
 </style>
-<body>
+<body id="elbody">
+    <div id="music_modal" class="music-modal">
+        <!-- <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=0"></iframe> -->
+        <audio id="musica">
+            <source src="music.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="music-display">
+            <p>Todo es mejor con música</p>
+            <img src="lover.jpg" alt="">
+            <button id="music_play">
+                <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M9,17.879V6.707A1,1,0,0,1,10.707,6l5.586,5.586a1,1,0,0,1,0,1.414l-5.586,5.586A1,1,0,0,1,9,17.879Z"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="music_pause_button" class="hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M7,0A4,4,0,0,0,3,4V20a4,4,0,0,0,8,0V4A4,4,0,0,0,7,0ZM8,20a1,1,0,0,1-2,0V4A1,1,0,0,1,8,4Z"/><path d="M17,0a4,4,0,0,0-4,4V20a4,4,0,0,0,8,0V4A4,4,0,0,0,17,0Zm1,20a1,1,0,0,1-2,0V4a1,1,0,0,1,2,0Z"/></svg>
+    </div>
     <header id="header">
         <div class="image hero">
             <img src="hero.jpg" alt="">
@@ -667,16 +760,7 @@
             </a>
         </p>
     </footer>
-    <div class="music" style="display: none;">
-        <!-- <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=0"></iframe> -->
-        <audio id="musica" controls autoplay>
-            <source src="music.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
-    </div>
     <script>
-        // musica.play()
-        
         const name_element = document.getElementById("name")
         const prefijo_element = document.getElementById("prefijo")
         
@@ -755,6 +839,28 @@
                 // inputform.classList.add("hidden")
             }
         }
+
+        var sleep = function(ms){
+            return new Promise(resolve => setTimeout(resolve, ms));
+        };
+        async function musicplay(){
+            elbody.classList.add("scrollable-body")
+            musica.play()
+            music_modal.classList.add("hidden-slow")
+            await sleep(2000)
+            music_modal.classList.add("hidden")
+            music_pause_button.classList.remove("hidden")
+        }
+        music_play.addEventListener("click", () => {
+            musicplay()
+        })
+        music_pause_button.addEventListener("click", () => {
+            if(musica.paused){
+                musica.play()
+            }else{
+                musica.pause()
+            }
+        })
 
     </script>
 </body>
