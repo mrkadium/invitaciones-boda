@@ -24,9 +24,10 @@
         --main-golden-on-white: goldenrod;
     }
 
-    body{
+    .body{
         min-height: 100dvh;
-        max-width: 1000px;
+        width: 100%;
+        padding: 0 calc((100dvw - 1000px)/2);
         margin: 0 auto;
         display: grid;
         user-select: none;
@@ -647,223 +648,225 @@
         }
     }
 </style>
-<body id="elbody">
-    <div id="music_modal" class="music-modal">
-        <!-- <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=0"></iframe> -->
-        <audio id="musica">
-            <source src="music.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
-        <div class="music-display">
-            <p>Todo es mejor con música</p>
-            <img src="lover.jpg" alt="">
-            <button id="music_play">
-                <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M9,17.879V6.707A1,1,0,0,1,10.707,6l5.586,5.586a1,1,0,0,1,0,1.414l-5.586,5.586A1,1,0,0,1,9,17.879Z"/></svg>
-            </button>
+<body>
+    <div class="body" id="elbody">
+        <div id="music_modal" class="music-modal">
+            <!-- <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=0"></iframe> -->
+            <audio id="musica">
+                <source src="music.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="music-display">
+                <p>Todo es mejor con música</p>
+                <img src="lover.jpg" alt="">
+                <button id="music_play">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M9,17.879V6.707A1,1,0,0,1,10.707,6l5.586,5.586a1,1,0,0,1,0,1.414l-5.586,5.586A1,1,0,0,1,9,17.879Z"/></svg>
+                </button>
+            </div>
         </div>
-    </div>
-    <div id="music_pause_button" class="hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M7,0A4,4,0,0,0,3,4V20a4,4,0,0,0,8,0V4A4,4,0,0,0,7,0ZM8,20a1,1,0,0,1-2,0V4A1,1,0,0,1,8,4Z"/><path d="M17,0a4,4,0,0,0-4,4V20a4,4,0,0,0,8,0V4A4,4,0,0,0,17,0Zm1,20a1,1,0,0,1-2,0V4a1,1,0,0,1,2,0Z"/></svg>
-    </div>
-    <header id="header">
-        <div class="image hero">
-            <img src="hero.jpg" alt="">
-            <p>La propuesta</p>
+        <div id="music_pause_button" class="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M7,0A4,4,0,0,0,3,4V20a4,4,0,0,0,8,0V4A4,4,0,0,0,7,0ZM8,20a1,1,0,0,1-2,0V4A1,1,0,0,1,8,4Z"/><path d="M17,0a4,4,0,0,0-4,4V20a4,4,0,0,0,8,0V4A4,4,0,0,0,17,0Zm1,20a1,1,0,0,1-2,0V4a1,1,0,0,1,2,0Z"/></svg>
         </div>
-        <div class="image2  image">
-            <img src="past.jpg" alt="">
-            <p>Nuestros inicios</p>
-        </div>
-        <div class="image3 image">
-            <img src="future.jpg" alt="">
-            <p>Nuestro futuro</p>
-        </div>
-        <h1>Hola, <span id="name"></span></h1>
-        <h2>¡Muchas gracias por ser parte de este momento tan bonito para nosotros!</h2>
-        <p class="scroller">
-            <a href="#main">
-                <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M1.51,6.079a1.492,1.492,0,0,1,1.06.44l7.673,7.672a2.5,2.5,0,0,0,3.536,0L21.44,6.529A1.5,1.5,0,1,1,23.561,8.65L15.9,16.312a5.505,5.505,0,0,1-7.778,0L.449,8.64A1.5,1.5,0,0,1,1.51,6.079Z"/></svg>
-            </a>
-        </p>
-    </header>
-    <main id="main">
-        <div class="image image1 efecto1">
-            <img class="image-top-center image-center-center" src="banner1.jpg" alt="">
-            <p>11</p>
-        </div>
-        <div class="image image2 efecto2">
-            <img class="image-top-center image-center-center" src="banner2.jpg" alt="">
-            <p>Abril</p>
-        </div>
-        <div class="image image3 efecto3">
-            <img class="image-top-center image-center-center" src="banner3.jpg" alt="">
-            <p>26</p>
-        </div>
-        <p class="scroller">
-            <a href="#details">
-                <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M1.51,6.079a1.492,1.492,0,0,1,1.06.44l7.673,7.672a2.5,2.5,0,0,0,3.536,0L21.44,6.529A1.5,1.5,0,1,1,23.561,8.65L15.9,16.312a5.505,5.505,0,0,1-7.778,0L.449,8.64A1.5,1.5,0,0,1,1.51,6.079Z"/></svg>
-            </a>
-        </p>
-    </main>
-    <section id="details">
-        <div class="detalle">
-            <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M18.5,2H18V1.5A1.5,1.5,0,0,0,16.5,0h0A1.5,1.5,0,0,0,15,1.5V2H9V1.5A1.5,1.5,0,0,0,7.5,0h0A1.5,1.5,0,0,0,6,1.5V2H5.5A5.5,5.5,0,0,0,0,7.5v11A5.5,5.5,0,0,0,5.5,24h13A5.5,5.5,0,0,0,24,18.5V7.5A5.5,5.5,0,0,0,18.5,2Zm0,19H5.5A2.5,2.5,0,0,1,3,18.5V10H21v8.5A2.5,2.5,0,0,1,18.5,21Z"/></svg>
-            <p>11 de abril de 2026</p>
-        </div>
-        <div class="detalle">
-            <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,21a9,9,0,1,1,9-9A9.01,9.01,0,0,1,12,21Z"/><path d="M10.5,11.055l-2.4,1.5a1.5,1.5,0,0,0-.475,2.068h0a1.5,1.5,0,0,0,2.068.475l2.869-1.8a2,2,0,0,0,.938-1.7V7.772a1.5,1.5,0,0,0-1.5-1.5h0a1.5,1.5,0,0,0-1.5,1.5Z"/></svg>
-            <p>3:00 PM</p>
-        </div>
-        <div class="detalle">
-            <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M12,0A10.513,10.513,0,0,0,1.5,10.5c0,2.826,2.2,6.766,6.541,11.709a5.275,5.275,0,0,0,7.92,0C20.3,17.267,22.5,13.327,22.5,10.5A10.513,10.513,0,0,0,12,0Zm1.706,20.231a2.33,2.33,0,0,1-3.412,0c-3.683-4.195-5.8-7.742-5.8-9.73a7.5,7.5,0,0,1,15,0C19.5,12.489,17.389,16.036,13.706,20.231Z"/><path d="M12,6.055a4.363,4.363,0,1,0,4.363,4.363A4.368,4.368,0,0,0,12,6.055Zm0,5.726a1.363,1.363,0,1,1,1.363-1.363A1.364,1.364,0,0,1,12,11.781Z"/></svg>
-            <p>Restaurante Carbón y Leña (<a href="https://maps.app.goo.gl/fE74oRGR9LLEhE6n6">clic para ver en mapa</a>)</p>
-        </div>
-        <div class="detalle">
-            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M1.056,22.611l2.011.625c.024.01.045.024.07.032s.05.006.075.013l2.1.652A1.5,1.5,0,0,0,6.2,21.067l-.644-.2L6.2,19a5.153,5.153,0,0,0,4.955-3.7L12,12.811l.818,2.41A5.192,5.192,0,0,0,17.8,19l.647,1.869-.644.2a1.5,1.5,0,0,0,.888,2.866l2.1-.652c.025-.007.05,0,.075-.013s.046-.022.07-.032l2.011-.625a1.5,1.5,0,1,0-.888-2.865l-.746.231-.643-1.856a5.085,5.085,0,0,0,2.118-5.753l-1.692-5A3.33,3.33,0,0,0,17,5.122l-3.55.984A3.3,3.3,0,0,0,12,6.961a3.315,3.315,0,0,0-1.448-.856L7,5.123a3.31,3.31,0,0,0-4.08,2.2L1.191,12.444a5.088,5.088,0,0,0,2.142,5.677L2.69,19.977l-.746-.231a1.5,1.5,0,1,0-.888,2.865ZM14.041,9.16A.336.336,0,0,1,14.249,9l3.55-.984A.35.35,0,0,1,17.89,8a.369.369,0,0,1,.346.283L19.157,11h-4.6l-.538-1.587A.319.319,0,0,1,14.041,9.16ZM6.107,8a.374.374,0,0,1,.094.013L9.751,9a.336.336,0,0,1,.208.163A.308.308,0,0,1,10,9.367L9.447,11h-4.6l.933-2.76A.343.343,0,0,1,6.107,8Z"/><path d="M16.5,4a1.5,1.5,0,0,0,1.061-.439l1-1A1.5,1.5,0,0,0,16.439.439l-1,1A1.5,1.5,0,0,0,16.5,4Z"/><path d="M6.439,3.561A1.5,1.5,0,0,0,8.561,1.439l-1-1A1.5,1.5,0,0,0,5.439,2.561Z"/><path d="M12,4a1.5,1.5,0,0,0,1.5-1.5v-1a1.5,1.5,0,0,0-3,0v1A1.5,1.5,0,0,0,12,4Z"/></svg>
-            <p>Vestimenta formal. Los colores <b>verde</b> y <b>blanco</b> están reservados para la novia y sus damas.</p>
-        </div>
-        <div class="detalle">
-            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M22.306,7.827l-6.545-6.27a5.319,5.319,0,0,0-7.5-.021L1.694,7.827A5.527,5.527,0,0,0,0,11.8v6.7A5.506,5.506,0,0,0,5.5,24h13A5.506,5.506,0,0,0,24,18.5V11.8A5.527,5.527,0,0,0,22.306,7.827ZM10.36,3.68a2.329,2.329,0,0,1,3.3.021l5.382,5.156-5.276,5.411a2.56,2.56,0,0,1-3.536,0L4.887,8.923ZM21,18.5A2.5,2.5,0,0,1,18.5,21H5.5A2.5,2.5,0,0,1,3,18.5V11.8a2.41,2.41,0,0,1,.049-.473l5.062,5.063a5.524,5.524,0,0,0,7.791-.013l5.024-5.151A2.454,2.454,0,0,1,21,11.8Z"/></svg>
-            <p>El mejor regalo es compartir este momento con nuestros seres queridos. Agradeceremos las muestras de cariño en regalo de sobre.</p>
-        </div>
-        <div class="polaroid">
-            <img src="venue.jpg" alt="">
-            <p>Carbón y Leña</p>
-        </div>
+        <header id="header">
+            <div class="image hero">
+                <img src="hero.jpg" alt="">
+                <p>La propuesta</p>
+            </div>
+            <div class="image2  image">
+                <img src="past.jpg" alt="">
+                <p>Nuestros inicios</p>
+            </div>
+            <div class="image3 image">
+                <img src="future.jpg" alt="">
+                <p>Nuestro futuro</p>
+            </div>
+            <h1>Hola, <span id="name"></span></h1>
+            <h2>¡Muchas gracias por ser parte de este momento tan bonito para nosotros!</h2>
+            <p class="scroller">
+                <a href="#main">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M1.51,6.079a1.492,1.492,0,0,1,1.06.44l7.673,7.672a2.5,2.5,0,0,0,3.536,0L21.44,6.529A1.5,1.5,0,1,1,23.561,8.65L15.9,16.312a5.505,5.505,0,0,1-7.778,0L.449,8.64A1.5,1.5,0,0,1,1.51,6.079Z"/></svg>
+                </a>
+            </p>
+        </header>
+        <main id="main">
+            <div class="image image1 efecto1">
+                <img class="image-top-center image-center-center" src="banner1.jpg" alt="">
+                <p>11</p>
+            </div>
+            <div class="image image2 efecto2">
+                <img class="image-top-center image-center-center" src="banner2.jpg" alt="">
+                <p>Abril</p>
+            </div>
+            <div class="image image3 efecto3">
+                <img class="image-top-center image-center-center" src="banner3.jpg" alt="">
+                <p>26</p>
+            </div>
+            <p class="scroller">
+                <a href="#details">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M1.51,6.079a1.492,1.492,0,0,1,1.06.44l7.673,7.672a2.5,2.5,0,0,0,3.536,0L21.44,6.529A1.5,1.5,0,1,1,23.561,8.65L15.9,16.312a5.505,5.505,0,0,1-7.778,0L.449,8.64A1.5,1.5,0,0,1,1.51,6.079Z"/></svg>
+                </a>
+            </p>
+        </main>
+        <section id="details">
+            <div class="detalle">
+                <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M18.5,2H18V1.5A1.5,1.5,0,0,0,16.5,0h0A1.5,1.5,0,0,0,15,1.5V2H9V1.5A1.5,1.5,0,0,0,7.5,0h0A1.5,1.5,0,0,0,6,1.5V2H5.5A5.5,5.5,0,0,0,0,7.5v11A5.5,5.5,0,0,0,5.5,24h13A5.5,5.5,0,0,0,24,18.5V7.5A5.5,5.5,0,0,0,18.5,2Zm0,19H5.5A2.5,2.5,0,0,1,3,18.5V10H21v8.5A2.5,2.5,0,0,1,18.5,21Z"/></svg>
+                <p>11 de abril de 2026</p>
+            </div>
+            <div class="detalle">
+                <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,21a9,9,0,1,1,9-9A9.01,9.01,0,0,1,12,21Z"/><path d="M10.5,11.055l-2.4,1.5a1.5,1.5,0,0,0-.475,2.068h0a1.5,1.5,0,0,0,2.068.475l2.869-1.8a2,2,0,0,0,.938-1.7V7.772a1.5,1.5,0,0,0-1.5-1.5h0a1.5,1.5,0,0,0-1.5,1.5Z"/></svg>
+                <p>3:00 PM</p>
+            </div>
+            <div class="detalle">
+                <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M12,0A10.513,10.513,0,0,0,1.5,10.5c0,2.826,2.2,6.766,6.541,11.709a5.275,5.275,0,0,0,7.92,0C20.3,17.267,22.5,13.327,22.5,10.5A10.513,10.513,0,0,0,12,0Zm1.706,20.231a2.33,2.33,0,0,1-3.412,0c-3.683-4.195-5.8-7.742-5.8-9.73a7.5,7.5,0,0,1,15,0C19.5,12.489,17.389,16.036,13.706,20.231Z"/><path d="M12,6.055a4.363,4.363,0,1,0,4.363,4.363A4.368,4.368,0,0,0,12,6.055Zm0,5.726a1.363,1.363,0,1,1,1.363-1.363A1.364,1.364,0,0,1,12,11.781Z"/></svg>
+                <p>Restaurante Carbón y Leña (<a href="https://maps.app.goo.gl/fE74oRGR9LLEhE6n6">clic para ver en mapa</a>)</p>
+            </div>
+            <div class="detalle">
+                <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M1.056,22.611l2.011.625c.024.01.045.024.07.032s.05.006.075.013l2.1.652A1.5,1.5,0,0,0,6.2,21.067l-.644-.2L6.2,19a5.153,5.153,0,0,0,4.955-3.7L12,12.811l.818,2.41A5.192,5.192,0,0,0,17.8,19l.647,1.869-.644.2a1.5,1.5,0,0,0,.888,2.866l2.1-.652c.025-.007.05,0,.075-.013s.046-.022.07-.032l2.011-.625a1.5,1.5,0,1,0-.888-2.865l-.746.231-.643-1.856a5.085,5.085,0,0,0,2.118-5.753l-1.692-5A3.33,3.33,0,0,0,17,5.122l-3.55.984A3.3,3.3,0,0,0,12,6.961a3.315,3.315,0,0,0-1.448-.856L7,5.123a3.31,3.31,0,0,0-4.08,2.2L1.191,12.444a5.088,5.088,0,0,0,2.142,5.677L2.69,19.977l-.746-.231a1.5,1.5,0,1,0-.888,2.865ZM14.041,9.16A.336.336,0,0,1,14.249,9l3.55-.984A.35.35,0,0,1,17.89,8a.369.369,0,0,1,.346.283L19.157,11h-4.6l-.538-1.587A.319.319,0,0,1,14.041,9.16ZM6.107,8a.374.374,0,0,1,.094.013L9.751,9a.336.336,0,0,1,.208.163A.308.308,0,0,1,10,9.367L9.447,11h-4.6l.933-2.76A.343.343,0,0,1,6.107,8Z"/><path d="M16.5,4a1.5,1.5,0,0,0,1.061-.439l1-1A1.5,1.5,0,0,0,16.439.439l-1,1A1.5,1.5,0,0,0,16.5,4Z"/><path d="M6.439,3.561A1.5,1.5,0,0,0,8.561,1.439l-1-1A1.5,1.5,0,0,0,5.439,2.561Z"/><path d="M12,4a1.5,1.5,0,0,0,1.5-1.5v-1a1.5,1.5,0,0,0-3,0v1A1.5,1.5,0,0,0,12,4Z"/></svg>
+                <p>Vestimenta formal. Los colores <b>verde</b> y <b>blanco</b> están reservados para la novia y sus damas.</p>
+            </div>
+            <div class="detalle">
+                <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M22.306,7.827l-6.545-6.27a5.319,5.319,0,0,0-7.5-.021L1.694,7.827A5.527,5.527,0,0,0,0,11.8v6.7A5.506,5.506,0,0,0,5.5,24h13A5.506,5.506,0,0,0,24,18.5V11.8A5.527,5.527,0,0,0,22.306,7.827ZM10.36,3.68a2.329,2.329,0,0,1,3.3.021l5.382,5.156-5.276,5.411a2.56,2.56,0,0,1-3.536,0L4.887,8.923ZM21,18.5A2.5,2.5,0,0,1,18.5,21H5.5A2.5,2.5,0,0,1,3,18.5V11.8a2.41,2.41,0,0,1,.049-.473l5.062,5.063a5.524,5.524,0,0,0,7.791-.013l5.024-5.151A2.454,2.454,0,0,1,21,11.8Z"/></svg>
+                <p>El mejor regalo es compartir este momento con nuestros seres queridos. Agradeceremos las muestras de cariño en regalo de sobre.</p>
+            </div>
+            <div class="polaroid">
+                <img src="venue.jpg" alt="">
+                <p>Carbón y Leña</p>
+            </div>
 
 
-        <p class="scroller">
-            <a href="#footer">
-                <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M1.51,6.079a1.492,1.492,0,0,1,1.06.44l7.673,7.672a2.5,2.5,0,0,0,3.536,0L21.44,6.529A1.5,1.5,0,1,1,23.561,8.65L15.9,16.312a5.505,5.505,0,0,1-7.778,0L.449,8.64A1.5,1.5,0,0,1,1.51,6.079Z"/></svg>
-            </a>
-        </p>
-    </section>
-    <footer id="footer">
-        <h2 class="hidden" id="thanks">Muchas gracias por confirmar</h2>
-        <p>¡<span id="prefijo"></span> esperamos!</p>
-        <div id="mymodal" class="modal">
-            Contar con la presencia de nuestros allegados en este evento tan especial nos encantaría. <span id="justone"><br>Por favor, solicitamos confirmar la asistencia <b>indicando el número de personas invitadas</b> que podrán asistir.</span> <br><br>Agradecemos que la confirmación sea <b>antes de 31 de marzo</b>.
-            <div class="buttons" id="buttons">Asistirán <button id="modalmenos">-</button> <span id="cupos2"></span> <button id="modalmas">+</button> personas</div>
-        </div>
+            <p class="scroller">
+                <a href="#footer">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M1.51,6.079a1.492,1.492,0,0,1,1.06.44l7.673,7.672a2.5,2.5,0,0,0,3.536,0L21.44,6.529A1.5,1.5,0,1,1,23.561,8.65L15.9,16.312a5.505,5.505,0,0,1-7.778,0L.449,8.64A1.5,1.5,0,0,1,1.51,6.079Z"/></svg>
+                </a>
+            </p>
+        </section>
+        <footer id="footer">
+            <h2 class="hidden" id="thanks">Muchas gracias por confirmar</h2>
+            <p>¡<span id="prefijo"></span> esperamos!</p>
+            <div id="mymodal" class="modal">
+                Contar con la presencia de nuestros allegados en este evento tan especial nos encantaría. <span id="justone"><br>Por favor, solicitamos confirmar la asistencia <b>indicando el número de personas invitadas</b> que podrán asistir.</span> <br><br>Agradecemos que la confirmación sea <b>antes de 31 de marzo</b>.
+                <div class="buttons" id="buttons">Asistirán <button id="modalmenos">-</button> <span id="cupos2"></span> <button id="modalmas">+</button> personas</div>
+            </div>
 
-        <form id="inputform" name="contact" action="success.html" method="POST" netlify data-netlify="true">
-            <input type="hidden" name="subject"
-            value="Confirmación de asistencia %{formName}" />
+            <form id="inputform" name="contact" action="success.html" method="POST" netlify data-netlify="true">
+                <input type="hidden" name="subject"
+                value="Confirmación de asistencia %{formName}" />
+                
+                <input type="text" id="inputname" name="name" hidden />
+                <textarea id="inputmessage" name="message" hidden></textarea>
+                <button id="inputsubmit" type="submit">Confirmar asistencia</button>
+
+                </form>
+                
+            <p class="scroller">
+                <a href="#header">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M22.5,18a1.5,1.5,0,0,1-1.061-.44L13.768,9.889a2.5,2.5,0,0,0-3.536,0L2.57,17.551A1.5,1.5,0,0,1,.449,15.43L8.111,7.768a5.505,5.505,0,0,1,7.778,0l7.672,7.672A1.5,1.5,0,0,1,22.5,18Z"/></svg>
+                </a>
+            </p>
+        </footer>
+        <script>
+            const name_element = document.getElementById("name")
+            const prefijo_element = document.getElementById("prefijo")
             
-            <input type="text" id="inputname" name="name" hidden />
-            <textarea id="inputmessage" name="message" hidden></textarea>
-            <button id="inputsubmit" type="submit">Confirmar asistencia</button>
-
-            </form>
+            const queryString = window.location.search
+            const urlParams = new URLSearchParams(queryString)
+            const data = decodeURIComponent(escape(atob(urlParams.get('invite'))));
+            const invitado = data.split(';')[0]
+            const prefijo = data.split(';')[1]
+            const cantidad = data.split(';')[2]
             
-        <p class="scroller">
-            <a href="#header">
-                <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M22.5,18a1.5,1.5,0,0,1-1.061-.44L13.768,9.889a2.5,2.5,0,0,0-3.536,0L2.57,17.551A1.5,1.5,0,0,1,.449,15.43L8.111,7.768a5.505,5.505,0,0,1,7.778,0l7.672,7.672A1.5,1.5,0,0,1,22.5,18Z"/></svg>
-            </a>
-        </p>
-    </footer>
-    <script>
-        const name_element = document.getElementById("name")
-        const prefijo_element = document.getElementById("prefijo")
-        
-        const queryString = window.location.search
-        const urlParams = new URLSearchParams(queryString)
-        const data = decodeURIComponent(escape(atob(urlParams.get('invite'))));
-        const invitado = data.split(';')[0]
-        const prefijo = data.split(';')[1]
-        const cantidad = data.split(';')[2]
-        
-        inputform.setAttribute("action", `success.html?invite=${urlParams.get('invite')}`)
-        
-        verifyConfirmation(data)
-        verifyCantidad(cantidad)
+            inputform.setAttribute("action", `success.html?invite=${urlParams.get('invite')}`)
+            
+            verifyConfirmation(data)
+            verifyCantidad(cantidad)
 
-        
-        // cupos.textContent = cantidad
-        cupos2.textContent = cantidad
-        name_element.textContent = invitado
-        prefijo_element.textContent = prefijo
+            
+            // cupos.textContent = cantidad
+            cupos2.textContent = cantidad
+            name_element.textContent = invitado
+            prefijo_element.textContent = prefijo
 
-        //default values for form inputs
-        inputname.value = invitado
-        inputmessage.value = `Cantidad apartada: ${cantidad}; Cantidad confirmada: 0`
+            //default values for form inputs
+            inputname.value = invitado
+            inputmessage.value = `Cantidad apartada: ${cantidad}; Cantidad confirmada: 0`
 
-        function reducirCantidad(){
-            let micantidad = parseInt(cupos2.textContent)
-            if(micantidad == 1) micantidad = 1
-            else if(micantidad > 1) micantidad = micantidad - 1
+            function reducirCantidad(){
+                let micantidad = parseInt(cupos2.textContent)
+                if(micantidad == 1) micantidad = 1
+                else if(micantidad > 1) micantidad = micantidad - 1
 
-            cupos2.textContent = micantidad
-        }
-        modalmenos.addEventListener("click", reducirCantidad)
-
-        function aumentarCantidad(){
-            let micantidad = parseInt(cupos2.textContent)
-            let limite = cantidad
-            if(micantidad == cantidad) micantidad = cantidad
-            else if(micantidad < cantidad) micantidad = micantidad + 1
-
-            cupos2.textContent = micantidad
-        }
-        modalmas.addEventListener("click", aumentarCantidad)
-
-        function confirmarAsistencia(){
-            inputmessage.value = `Cantidad apartada: ${cantidad}; Cantidad confirmada: ${cupos2.textContent}`
-        }
-        inputform.addEventListener("submit", (e) => {
-            e.preventDefault()
-            confirmarAsistencia()
-            saveInBrowser()
-            inputform.submit()
-        })
-
-        function saveInBrowser(){
-            window.localStorage.setItem("hasConfirmed", "true")
-            window.localStorage.setItem("data", data)
-        }
-
-        function verifyConfirmation(data){
-            const hasConfirmed = window.localStorage.getItem("hasConfirmed")
-            const dataValue = window.localStorage.getItem("data")
-
-            if(hasConfirmed == "true" && dataValue == data){
-                mymodal.classList.add("hidden")
-                inputform.classList.add("hidden")
-                thanks.classList.remove("hidden")
+                cupos2.textContent = micantidad
             }
-        }
+            modalmenos.addEventListener("click", reducirCantidad)
 
-        function verifyCantidad(micantidad){
-            if(micantidad == 1){
-                // mymodal.classList.add("hidden")
-                justone.classList.add("hidden")
-                // getElementById("buttons").classList.add("hidden")
-                // inputform.classList.add("hidden")
+            function aumentarCantidad(){
+                let micantidad = parseInt(cupos2.textContent)
+                let limite = cantidad
+                if(micantidad == cantidad) micantidad = cantidad
+                else if(micantidad < cantidad) micantidad = micantidad + 1
+
+                cupos2.textContent = micantidad
             }
-        }
+            modalmas.addEventListener("click", aumentarCantidad)
 
-        var sleep = function(ms){
-            return new Promise(resolve => setTimeout(resolve, ms));
-        };
-        async function musicplay(){
-            elbody.classList.add("scrollable-body")
-            musica.play()
-            music_modal.classList.add("hidden-slow")
-            await sleep(2000)
-            music_modal.classList.add("hidden")
-            music_pause_button.classList.remove("hidden")
-        }
-        music_play.addEventListener("click", () => {
-            musicplay()
-        })
-        music_pause_button.addEventListener("click", () => {
-            if(musica.paused){
+            function confirmarAsistencia(){
+                inputmessage.value = `Cantidad apartada: ${cantidad}; Cantidad confirmada: ${cupos2.textContent}`
+            }
+            inputform.addEventListener("submit", (e) => {
+                e.preventDefault()
+                confirmarAsistencia()
+                saveInBrowser()
+                inputform.submit()
+            })
+
+            function saveInBrowser(){
+                window.localStorage.setItem("hasConfirmed", "true")
+                window.localStorage.setItem("data", data)
+            }
+
+            function verifyConfirmation(data){
+                const hasConfirmed = window.localStorage.getItem("hasConfirmed")
+                const dataValue = window.localStorage.getItem("data")
+
+                if(hasConfirmed == "true" && dataValue == data){
+                    mymodal.classList.add("hidden")
+                    inputform.classList.add("hidden")
+                    thanks.classList.remove("hidden")
+                }
+            }
+
+            function verifyCantidad(micantidad){
+                if(micantidad == 1){
+                    // mymodal.classList.add("hidden")
+                    justone.classList.add("hidden")
+                    // getElementById("buttons").classList.add("hidden")
+                    // inputform.classList.add("hidden")
+                }
+            }
+
+            var sleep = function(ms){
+                return new Promise(resolve => setTimeout(resolve, ms));
+            };
+            async function musicplay(){
+                elbody.classList.add("scrollable-body")
                 musica.play()
-            }else{
-                musica.pause()
+                music_modal.classList.add("hidden-slow")
+                await sleep(2000)
+                music_modal.classList.add("hidden")
+                music_pause_button.classList.remove("hidden")
             }
-        })
+            music_play.addEventListener("click", () => {
+                musicplay()
+            })
+            music_pause_button.addEventListener("click", () => {
+                if(musica.paused){
+                    musica.play()
+                }else{
+                    musica.pause()
+                }
+            })
 
-    </script>
+        </script>
+    </div>
 </body>
 </html>
