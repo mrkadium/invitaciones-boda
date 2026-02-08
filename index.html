@@ -411,8 +411,8 @@
     }
 
     @keyframes bubblejump {
-        0%   {transform: translateY(10px);}
-        8%  {transform: translateY(0px);}
+        0%   {transform: translateY(0px);}
+        /* 8%  {transform: translateY(0px);}
         16%  {transform: translateY(10px);}
         33% {transform: translateY(0px);}
 
@@ -420,7 +420,8 @@
 
         66%   {transform: translateY(10px);}
         74%  {transform: translateY(0px);}
-        90%  {transform: translateY(10px);}
+        90%  {transform: translateY(10px);} */
+        50% {transform: translateY(10px);}
         100% {transform: translateY(0px);}
 
     }
@@ -447,6 +448,7 @@
         animation-name: bubblejump;
         animation-duration: 3s;
         animation-delay: 5s;
+        animation-iteration-count: infinite;
     }
     .scroller a{
         display: flex;
