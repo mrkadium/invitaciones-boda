@@ -23,6 +23,10 @@
         --main-golden-on-green: rgb(229, 189, 90);
         --main-golden-on-white: goldenrod;
     }
+    
+    html{
+        scrollbar-color: var(--main-green) beige;
+    }
 
     .body{
         min-height: 100dvh;
@@ -114,7 +118,8 @@
         position: relative;
         z-index: 1;
         transform: rotate(-2deg) translateX(-75px) scale(0.8);
-        
+    }
+    .header_animated .image2{        
         animation: image2move;
         animation-duration: 3s;
         animation-delay: .5s;
@@ -128,7 +133,8 @@
         position: relative;
         z-index: 1;
         transform: rotate(2deg) translateX(75px) scale(0.8);
-        
+    }
+    .header_animated .image3{        
         animation: image3move;
         animation-duration: 3s;
         animation-delay: 2.5s;
@@ -213,20 +219,20 @@
     }
 
     
-    main .efecto1 img,
-    main .efecto2 img,
-    main .efecto3 img{
+    .main_animated .efecto1 img,
+    .main_animated .efecto2 img,
+    .main_animated .efecto3 img{
         animation: grayimages;
         animation-duration: 3s;
         animation-delay: .5s;
     }
-    main .efecto1 img{
+    .main_animated .efecto1 img{
         animation-delay: .5s;
     }
-    main .efecto2 img{
+    .main_animated .efecto2 img{
         animation-delay: 2.5s;
     }
-    main .efecto3 img{
+    .main_animated .efecto3 img{
         animation-delay: 4.5s;
     }
 
@@ -450,6 +456,8 @@
         animation-duration: 3s;
         animation-delay: 5s;
         animation-iteration-count: infinite;
+
+        display: none;
     }
     .scroller a{
         display: flex;
@@ -481,7 +489,7 @@
         height: 100dvh;
         z-index: 6;
 
-        background-color: white;
+        background-color: var(--main-green);
     }
     .music-display{
         display: flex;
@@ -491,26 +499,49 @@
         gap: 10px;
 
         /* width: 200px; */
+        position: relative;
         padding: 24px 12px;
 
         border-radius: 12px;
-        box-shadow: 0 3px 10px rgb(170, 170, 170);
+        box-shadow: 0 3px 10px rgb(1, 47, 24);
+        background-color: white;
+
+        color: var(--main-golden-on-white);
+        font-weight: bold;
+        font-size: 20px;
+
     }
     .music-display img{
-        width: 150px;
-        height: 150px;
-
+        width: 190px;
+        height: 180px;
+        
         border-radius: 12px;
     }
     .music-display button{
         display: inline-block;
-
+        
+        position: absolute;
+        top: 50%;
+        width: 60px;
+        height: 60px;
+        
         border-radius: 50%;
         border: 0;
+        cursor: pointer;
+        background-color: white;
+
+        opacity: 0.5;
+
+        transition: all .3s ease;
+    }
+    .music-display button:hover{
+        opacity: 1;
     }
     .music-display svg{
         width: 50px;
         height: 50px;
+
+        fill: var(--main-green);
     }
 
 
@@ -646,6 +677,10 @@
             justify-content: center;
             align-items: center;
         }
+
+        .music-display{
+            width: 400px;
+        }
     }
 </style>
 <body>
@@ -744,7 +779,7 @@
             <h2 class="hidden" id="thanks">Muchas gracias por confirmar</h2>
             <p>¡<span id="prefijo"></span> esperamos!</p>
             <div id="mymodal" class="modal">
-                Contar con la presencia de nuestros allegados en este evento tan especial nos encantaría. <span id="justone"><br>Por favor, solicitamos confirmar la asistencia <b>indicando el número de personas invitadas</b> que podrán asistir.</span> <br><br>Agradecemos que la confirmación sea <b>antes de 31 de marzo</b>.
+                Contar con la presencia de nuestros allegados en este evento tan especial nos encantaría. <span id="justone"><br>Por favor, solicitamos confirmar la asistencia <b>indicando el número de personas invitadas</b> que podrán asistir.</span> <br><br>Agradecemos que la confirmación sea <b>antes del 31 de marzo</b>.
                 <div class="buttons" id="buttons">Asistirán <button id="modalmenos">-</button> <span id="cupos2"></span> <button id="modalmas">+</button> personas</div>
             </div>
 
@@ -765,6 +800,13 @@
             </p>
         </footer>
         <script>
+            elbody.scrollTo({
+                top: 100,
+                left: 100,
+                behavior: "smooth",
+            });
+
+
             const name_element = document.getElementById("name")
             const prefijo_element = document.getElementById("prefijo")
             
@@ -857,12 +899,27 @@
             }
             music_play.addEventListener("click", () => {
                 musicplay()
+                header.classList.add("header_animated")
+                main.classList.remove("main_animated")
+                already_shown = false
             })
             music_pause_button.addEventListener("click", () => {
                 if(musica.paused){
                     musica.play()
                 }else{
                     musica.pause()
+                }
+            })
+
+
+            already_shown = false
+            const main_element = document.getElementById("main")
+            elbody.addEventListener('scroll', () => {
+                // console.log();
+                
+                if(!already_shown && (main_element.getBoundingClientRect().top > 0 && main_element.getBoundingClientRect().top < 100)){
+                    main_element.classList.add("main_animated")
+                    already_shown = true
                 }
             })
 
