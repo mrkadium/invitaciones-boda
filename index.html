@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
     <title>Raquel y Mario | Nuestra boda</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,6 +42,7 @@
         font-optical-sizing: auto;
         font-weight: 200;
         font-style: normal;
+        background-color: white;
 
         max-height: 100dvh;
         overflow-y: hidden;
@@ -67,6 +69,7 @@
         padding: 20px;
 
         text-align: center;
+        background-color: white;
     }
     
     header h1{
@@ -270,6 +273,7 @@
 
         /* background-image: url("restaurante.jpg"); */
         background-position: center;
+        background-color: white;
     }
     section::before{
         position: absolute;
@@ -298,7 +302,7 @@
 
         margin-bottom: 12px;
 
-        color: rgb(38, 122, 83);
+        color: var(--main-green);
     }
     section .detalle b{
         color: var(--main-golden-on-white);
@@ -352,7 +356,7 @@
         justify-content: center;
         align-items: center;
 
-        background-color: rgb(38, 122, 83);
+        background-color: var(--main-green);
 
         text-align: center;
         color: white
@@ -409,7 +413,7 @@
         border-radius: 24px;
 
         font-size: 16px;
-        color:rgb(38, 122, 83);
+        color: var(--main-green);
 
         cursor: pointer;
         
@@ -475,7 +479,7 @@
         margin-top: 4px;
         width: 30px;
         height: 30px;
-        fill: rgb(5, 90, 5);
+        fill: var(--main-green);
     }
 
 
@@ -682,6 +686,103 @@
 
         .music-display{
             width: 400px;
+        }
+    }
+    @media (prefers-color-scheme: dark) {
+        .body {
+            background: white;
+        }
+        header{
+            background-color: white;
+        }
+        header h1{
+            color: var(--main-golden-on-green);
+        }
+        header h2{
+            color: var(--main-green);
+        }
+        header .image,
+        header .image3,
+        header .image2{
+            background: white;
+            border-color: 1px solid rgb(234, 234, 234);
+            box-shadow: 0px 3px 10px rgb(212, 212, 212);;
+        }
+        header .image p,
+        header .image3 p,
+        header .image2 p{
+            color: grey;
+        }
+        main{
+            background-color: white;
+        }
+        main .image p{
+            color: white;
+        }
+        section,
+        section::before{
+            background-color: rgba(255, 255, 255, 0.96);
+        }
+        section .detalle{
+            color: var(--main-green);
+        }
+        section .detalle b{
+            color: var(--main-golden-on-white);
+        }
+        section .detalle svg{
+            fill: var(--main-golden-on-green);
+        }
+        section .detalle a{
+            color: var(--main-golden-on-white);
+        }
+        .polaroid{
+            background-color: white;
+            box-shadow: 0 3px 10px rgb(185, 185, 185);
+        }
+        .polaroid p{
+            color: grey;
+        }
+        footer{
+            background-color: var(--main-green);
+            color: white;
+        }
+        footer p{
+            color: var(--main-golden-on-green);
+        }
+        footer .buttons button{
+            background-color: var(--main-golden-on-white);
+        }
+        footer form button{
+            background-color: white;
+            color: var(--main-green);
+        }
+        .scroller{
+            box-shadow: 0px 3px 6px rgb(188, 188, 188);
+            background-color: rgba(255, 255, 255, 0.697);
+        }
+        .scroller svg{
+            fill: var(--main-green);
+        }
+        .music-modal{
+            background-color: var(--main-green);
+        }
+        .music-display{
+            background-color: white;
+            box-shadow: 0 3px 10px rgb(1, 47, 24);
+            color: var(--main-golden-on-white);
+        }
+        .music-display button{
+            background-color: white;
+        }
+        .music-display sv{
+            fill: var(--main-green);
+        }
+        #music_pause_button{
+            background-color: white;
+            box-shadow: 0 3px 10px rgb(192, 192, 192);
+        }
+        #music_pause_button svg{
+            fill: var(--main-golden-on-white);
         }
     }
 </style>
